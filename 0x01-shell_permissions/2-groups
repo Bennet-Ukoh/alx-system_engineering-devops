@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod --reference = betty hello 
+chmod --reference = hello betty 
