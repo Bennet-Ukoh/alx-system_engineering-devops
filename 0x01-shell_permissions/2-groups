@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod --reference = dicl hello 
+chmod --reference = betty hello 
