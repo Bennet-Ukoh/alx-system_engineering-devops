@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#Script to print string mltiple times using while loop
+# Script to print string mltiple times using while loop
 
 i=1
 
