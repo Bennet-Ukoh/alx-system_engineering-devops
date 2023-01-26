@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# shellcheck disable=SC2154
+# Sets up and configures nginx
+
+# Update package manager
+sudo apt-get update
+
+# Install Nginx
+sudo apt-get install -y nginx
+
+# Create a backup of the default Nginx configuration file
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
+
+# Add custom header to Nginx configuration file
+sudo sed -i "20i\        add_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
+
+# Restart Nginx service
+sudo service nginx restart
