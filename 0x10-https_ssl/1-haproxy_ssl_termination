@@ -33,18 +33,11 @@ defaults
 	errorfile 503 /etc/haproxy/errors/503.http
 	errorfile 504 /etc/haproxy/errors/504.http
 
-frontend  bennetu-frontend-http
-        bind *:80
-        mode http
-	http-request set-header X-Forwarded-Proto http
-        default_backend bennetu-backend
-
-frontend bennetu-frontend-https
-	bind *:443 ssl crt /etc/haproxy/certs/www.bennetuk.tech
-	http-request set-header X-Forwarded-Proto https
-	default_backend bennetu-backend
-
-backend bennetu-backend
+listen concati_apps 
+	bind 0.0.0.0:80
+	mode http
         balance roundrobin
+        option httpclose
+	option forwardfo
         server 71754-web-01 18.209.179.25:80 check
         server 71754-web-02 100.25.197.129:80 check
