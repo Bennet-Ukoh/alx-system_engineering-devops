@@ -12,7 +12,7 @@ def number_of_subscribers(subreddit):
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
     
     # Define a custom user agent for the HTTP request (required by Reddit API)
-    headers = {'User-Agent': 'myBot/0.0.1'}
+    headers = {'User-Agent': 'Google Chrome Version 81.0.4044.129'}
     
     # Send a GET request to the URL with the custom user agent header
     response = requests.get(url, headers=headers)
